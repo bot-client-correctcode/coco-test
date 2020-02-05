@@ -1,4 +1,5 @@
 import express from 'express';
+import { router } from './routes/web';
 
 const app = express();
 
@@ -10,6 +11,8 @@ app.get('/hello-world', (req, res) => {
     <h1>Hello World!</h1>
   `)
 });
+
+app.use(router);
 
 app.listen(PORT, HOST, (err) => {
   if (err) {
